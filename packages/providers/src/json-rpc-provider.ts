@@ -42,7 +42,7 @@ import {
 import { exponentialBackoff } from './exponential-backoff';
 import { Provider } from './provider';
 import { ConnectionInfo, fetchJson } from './fetch_json';
-import { TxExecutionStatus } from '@near-js/types/src/provider/protocol';
+import { TxExecutionStatus } from '@near-js/types';
 
 /** @hidden */
 // Default number of retries before giving up on a request.
@@ -267,7 +267,7 @@ export class JsonRpcProvider extends Provider {
      * Returns the next light client block as far in the future as possible from the last known hash
      * to still be able to validate from that hash. This will either return the last block of the
      * next epoch, or the last final known block.
-     * 
+     *
      * @see [https://github.com/near/NEPs/blob/master/specs/ChainSpec/LightClient.md#light-client-block](https://github.com/near/NEPs/blob/master/specs/ChainSpec/LightClient.md#light-client-block)
      */
     async nextLightClientBlock(request: NextLightClientBlockRequest): Promise<NextLightClientBlockResponse> {
